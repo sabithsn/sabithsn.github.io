@@ -102,6 +102,22 @@
             });
 
         });
+
+        var Container = $('.container');
+        Container.imagesLoaded(function () {
+            var portfolio = $('.gallery-menu2');
+            portfolio.on('click', 'button', function () {
+                $(this).addClass('active').siblings().removeClass('active');
+                var filterValue = $(this).attr('data-filter');
+                $grid.isotope({
+                    filter: filterValue
+                });
+            });
+            var $grid = $('.gallery-list2').isotope({
+                itemSelector: '.gallery-grid2'
+            });
+
+        });
 	
     // FUN FACTS   
 
