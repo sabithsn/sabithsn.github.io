@@ -373,10 +373,11 @@ a img.aligncenter {
 	z-index: 1;
 }
 .heading h1{
+    padding: 2rem;
 	color: #ffffff;
-	font-weight: 700;
+	font-weight: 500;
 	font-size: 62px;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 }
 .heading p{
 	font-size: 18px;
@@ -419,6 +420,7 @@ xclip
   padding: .2em 0;
   color: #ffffff;
   font-size: 30px;
+
 }
 .cd-headline.clip span b{
 	text-transform: uppercase;
@@ -436,11 +438,15 @@ xclip
   width: 2px;
   height: 100%;
   background-color: #aebcb9;
+    transition: 5s;
+
 }
 .cd-headline.clip b {
+
   opacity: 0;
 }
 .cd-headline.clip b.is-visible {
+
   opacity: 1;
 }
 
