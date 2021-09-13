@@ -74,6 +74,29 @@
 			}, 700);
 		});
 	}
+    
+    // Scroll to top        
+    if ($('#scroll-to-top2').length) {
+        var scrollTrigger = 100, // px
+            backToTop2 = function () {
+                var scrollTop = $(window).scrollTop();
+                if (scrollTop > scrollTrigger) {
+                    $('#scroll-to-top2').addClass('show');
+                } else {
+                    $('#scroll-to-top2').removeClass('show');
+                }
+            };
+        backToTop();
+        $(window).on('scroll', function () {
+            backToTop();
+        });
+        $('#scroll-to-top2').on('click', function (e) {
+            e.preventDefault();
+            $('html,body').animate({
+                scrollTop: 0
+            }, 700);
+        });
+    }
 	
 	// Banner 
 	
