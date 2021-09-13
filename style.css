@@ -545,11 +545,11 @@ xclip
 .section-title {
     display: block;
     position: relative;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
 .section-title p {
-    color: #999;
+    color: #4F4444;
     font-weight: 400;
     font-size: 18px;
     line-height: 33px;
