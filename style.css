@@ -646,7 +646,7 @@ xclip
 	position: relative;
 	z-index: 2;
 }
-.right-box-pro::before {
+/*.right-box-pro::before {
     content: "";
     background: url(images/country-quilt-dark.png);
     width: 100%;
@@ -656,7 +656,7 @@ xclip
     right: -20px;
     z-index: 0;
 }
-
+*/
 
 
 .services-inner-box{
