@@ -31,6 +31,12 @@ body {
     line-height: 1.80857;
 }
 
+.highlight-red {
+    color: darkred !important;
+    font-weight: bold;
+}
+
+
 html, body{
 	height: 100%;
 }
