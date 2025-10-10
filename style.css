@@ -25,7 +25,7 @@
 -------------------------------------------------------------------*/
 
 body {
-    color: #999999;
+    color: #4F4F50;
     font-size: 14px;
     font-family: 'Roboto Mono', monospace;
     line-height: 1.80857;
@@ -425,7 +425,7 @@ xclip
   display: inline-block;
   padding: .2em 0;
   color: #ffffff;
-  font-size: 30px;
+  font-size: 25px;
 
 }
 .cd-headline.clip span b{
@@ -2480,4 +2480,24 @@ select.mobile-device {
 .btn-light:focus {
     border-color: rgba(255, 255, 255, 0.6);
     color: rgba(255, 255, 255, 0.6);
+}
+
+/* MoonWave audio tags */
+.avatar-audio { position: relative; }
+.audio-tag {
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  font-size: 12px;
+  line-height: 1;
+  padding: 4px 8px;
+  color: #fff;
+  background: rgba(0,0,0,.55);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 999px;
+  pointer-events: none; /* don’t block clicks on the waveform/avatar */
+  backdrop-filter: blur(3px);
+}
+@media (max-width: 480px){
+  .audio-tag { font-size: 11px; padding: 3px 7px; }
 }
