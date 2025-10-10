@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Homepage -->
+  <url>
+    <loc>https://sabithsn.github.io/</loc>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.00</priority>
+
+    <!-- Key images shown on homepage -->
+    <image:image>
+      <image:loc>https://sabithsn.github.io/uploads/sabit-hassan.jpg</image:loc>
+      <image:title>Sabit Hassan (Pantho) — Founder &amp; CEO, Moonworks AI</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://sabithsn.github.io/images/Sabit.png</image:loc>
+      <image:title>Moonworks AI / Sabit logo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://sabithsn.github.io/images/crescent.png</image:loc>
+      <image:title>Moon hero crescent</image:title>
+    </image:image>
+
+    <!-- Featured art images (sample selection) -->
+    <image:image>
+      <image:loc>https://sabithsn.github.io/uploads/ashitaka-and-san-sabit-hassan.jpg</image:loc>
+      <image:title>Ashitaka and San - Parting for a Bit</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://sabithsn.github.io/uploads/aurora-night-sabit-hassan.jpg</image:loc>
+      <image:title>Aurora Night</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://sabithsn.github.io/uploads/bicycle-sketch-sabit-hassan.jpg</image:loc>
+      <image:title>I want bicycles and balloons</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://sabithsn.github.io/uploads/rukia-sabit-hassan.jpg</image:loc>
+      <image:title>Blood Butterfly</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://sabithsn.github.io/uploads/kenshin-sabit-hassan.jpg</image:loc>
+      <image:title>Wandering Samurai</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://sabithsn.github.io/uploads/wolf-1.jpg</image:loc>
+      <image:title>Howl</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://sabithsn.github.io/uploads/goldfish.jpg</image:loc>
+      <image:title>Same world, right?</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://sabithsn.github.io/uploads/cc-on-cart.jpg</image:loc>
+      <image:title>Right, Lelouch?</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://sabithsn.github.io/uploads/whisper-of-the-heart.jpg</image:loc>
+      <image:title>Whisper of the heart</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://sabithsn.github.io/uploads/white-mountain-sabit-hassan.jpeg</image:loc>
+      <image:title>Snowy Hike</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://sabithsn.github.io/uploads/wolf-2.jpg</image:loc>
+      <image:title>Don't scare my son</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://sabithsn.github.io/uploads/blue-mountain-sabit-hassan.jpeg</image:loc>
+      <image:title>Moonlight Hike</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://sabithsn.github.io/uploads/witch-and-warlock.jpg</image:loc>
+      <image:title>Witch and Warlock</image:title>
+    </image:image>
+
+    <!-- Travel images (sample selection) -->
+    <image:image>
+      <image:loc>https://sabithsn.github.io/uploads/travels/nagarkot-6.jpg</image:loc>
+      <image:title>Nagarkot, Nepal</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://sabithsn.github.io/uploads/travels/cliffs-of-moher.jpg</image:loc>
+      <image:title>Cliffs of Moher, Ireland</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://sabithsn.github.io/uploads/travels/istanbul-turkey.jpg</image:loc>
+      <image:title>Old town, Istanbul</image:title>
+    </image:image>
+  </url>
+
+  <!-- CV PDF -->
+  <url>
+    <loc>https://sabithsn.github.io/uploads/CV-Sabit-Hassan.pdf</loc>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- (Optional) Dedicated images page or gallery pages:
+       If you ever split galleries into their own routes (e.g., /art, /travels),
+       add those URLs here as separate <url> entries. For a single-page site
+       you generally do NOT include hash anchors in sitemaps. -->
+</urlset>
