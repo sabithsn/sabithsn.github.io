@@ -38,7 +38,7 @@
 
   <!-- CSS (remove duplicate Bootstrap include) -->
   <link rel="stylesheet" href="css/bootstrap5.min.css">
-  <link rel="stylesheet" href="style.css?v=2.3">
+  <link rel="stylesheet" href="style.css?v=2.4">
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/custom.css">
   <!-- Vendor CSS from theme -->
@@ -223,10 +223,8 @@
       <h2 class="gradient-text" style="font-size: 40px;">Hello World</h2>
       <h3 class="hero-rotator gradient-text" aria-label="I am creating Lean and Agile Frontier AI, Lunara and Moonwave, and CAT pretraining.">
         <span class="hero-rotator__lead" aria-hidden="true">I am creating</span>
-        <span class="hero-rotator__words" aria-hidden="true">
-          <span class="hero-rotator__word is-active">Lean &amp; Agile Frontier AI</span>
-          <span class="hero-rotator__word">Lunara &amp; Moonwave</span>
-          <span class="hero-rotator__word">CAT pretraining</span>
+        <span class="hero-rotator__words" aria-hidden="true" data-phrases='["Lean &amp; Agile Frontier AI", "Lunara &amp; Moonwave", "CAT pretraining"]'>
+          <span class="hero-rotator__word">Lean &amp; Agile Frontier AI</span>
         </span>
       </h3>
       <div class="moonworks-cta">
@@ -785,80 +783,93 @@
     const rotator = document.querySelector('.hero-rotator__words');
     if (!rotator) return;
 
-    const words = Array.from(rotator.querySelectorAll('.hero-rotator__word'));
-    if (!words.length) return;
+    const word = rotator.querySelector('.hero-rotator__word');
+    if (!word) return;
 
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const exitDuration = 420;
-    let current = Math.max(0, words.findIndex(function (word) {
-      return word.classList.contains('is-active');
-    }));
-    let timer = null;
-    let phaseTimer = null;
-
-    function settleWord(index) {
-      words.forEach(function (word, wordIndex) {
-        word.classList.toggle('is-active', wordIndex === index);
-        word.classList.remove('is-leaving');
-      });
-      current = index;
+    let phrases = [];
+    try {
+      phrases = JSON.parse(rotator.getAttribute('data-phrases') || '[]');
+    } catch (error) {
+      phrases = [];
     }
 
-    function showWord(index) {
-      const next = (index + words.length) % words.length;
-      const outgoing = words[current];
-      const incoming = words[next];
+    phrases = phrases.filter(function (phrase) {
+      return typeof phrase === 'string' && phrase.trim().length;
+    });
+    if (!phrases.length) phrases = [word.textContent.trim()];
 
-      if (incoming === outgoing && incoming.classList.contains('is-active')) return;
+    const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const holdDuration = 2800;
+    const exitDuration = 320;
+    const blankDuration = 90;
+    const enterDuration = 520;
+    let current = Math.max(0, phrases.indexOf(word.textContent.trim()));
+    let holdTimer = null;
+    let phaseTimer = null;
+    let enterTimer = null;
+    let isTransitioning = false;
 
-      if (phaseTimer !== null) {
-        clearTimeout(phaseTimer);
-        phaseTimer = null;
-      }
+    function showImmediately(index) {
+      word.classList.remove('is-exiting', 'is-entering');
+      word.textContent = phrases[index];
+      current = index;
+      isTransitioning = false;
+    }
 
-      if (reducedMotion) {
-        settleWord(next);
+    function transitionTo(index) {
+      const next = (index + phrases.length) % phrases.length;
+      if (isTransitioning || next === current) return;
+
+      if (motionPreference.matches) {
+        showImmediately(next);
+        scheduleNext();
         return;
       }
 
-      if (outgoing && outgoing !== incoming) {
-        outgoing.classList.remove('is-active');
-        outgoing.classList.add('is-leaving');
-      }
+      isTransitioning = true;
+      word.classList.remove('is-entering');
+      word.classList.add('is-exiting');
 
-      /* Finish the exit first; the next phrase then drops in from above. */
+      /* Keep a short empty beat between phrases, then animate one new node in. */
       phaseTimer = window.setTimeout(function () {
-        words.forEach(function (word) {
-          word.classList.remove('is-active', 'is-leaving');
-        });
-        incoming.classList.add('is-active');
+        word.textContent = phrases[next];
         current = next;
+        word.classList.remove('is-exiting');
+        word.classList.add('is-entering');
         phaseTimer = null;
 
-        if (outgoing && outgoing !== incoming) {
-          outgoing.classList.remove('is-leaving');
-        }
-      }, exitDuration);
+        enterTimer = window.setTimeout(function () {
+          word.classList.remove('is-entering');
+          enterTimer = null;
+          isTransitioning = false;
+          scheduleNext();
+        }, enterDuration);
+      }, exitDuration + blankDuration);
     }
 
     function stopRotator() {
-      if (timer !== null) clearInterval(timer);
-      timer = null;
+      if (holdTimer !== null) clearTimeout(holdTimer);
+      if (phaseTimer !== null) clearTimeout(phaseTimer);
+      if (enterTimer !== null) clearTimeout(enterTimer);
+      holdTimer = null;
+      phaseTimer = null;
+      enterTimer = null;
+      showImmediately(current);
     }
 
-    function startRotator() {
-      stopRotator();
-      if (words.length < 2 || document.hidden) return;
-
-      timer = setInterval(function () {
-        showWord((current + 1) % words.length);
-      }, 3600);
+    function scheduleNext() {
+      if (phrases.length < 2 || document.hidden || isTransitioning) return;
+      if (holdTimer !== null) clearTimeout(holdTimer);
+      holdTimer = window.setTimeout(function () {
+        holdTimer = null;
+        transitionTo(current + 1);
+      }, holdDuration);
     }
 
-    startRotator();
+    scheduleNext();
     document.addEventListener('visibilitychange', function () {
       if (document.hidden) stopRotator();
-      else startRotator();
+      else scheduleNext();
     });
   })();
 
