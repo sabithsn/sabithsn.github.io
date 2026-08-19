@@ -38,7 +38,7 @@
 
   <!-- CSS (remove duplicate Bootstrap include) -->
   <link rel="stylesheet" href="css/bootstrap5.min.css">
-  <link rel="stylesheet" href="style.css?v=2.1">
+  <link rel="stylesheet" href="style.css?v=2.3">
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/custom.css">
   <!-- Vendor CSS from theme -->
@@ -76,6 +76,35 @@
     /* link cards */
     .moonworks-cta { display: inline-block; margin-top: .5rem; }
     .oss-kicker{display:block;margin-bottom:.5rem;}
+
+    /* Keep the art gallery in a contained two-column grid on phones, even when
+       Isotope has written desktop positioning directly onto the elements. */
+    @media (max-width: 767.98px) {
+      #art .gallery-list.row {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        width: 100%;
+        height: auto !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+      }
+      #art .gallery-list.row > .gallery-grid {
+        position: relative !important;
+        inset: auto !important;
+        box-sizing: border-box !important;
+        transform: none !important;
+        flex: none !important;
+        float: none !important;
+        max-width: 100% !important;
+        min-width: 0;
+        width: 100% !important;
+        padding: 0 !important;
+      }
+      #art .gallery-list.row > .gallery-grid[hidden] {
+        display: none !important;
+      }
+    }
 
   </style>
 
@@ -195,7 +224,7 @@
       <h3 class="hero-rotator gradient-text" aria-label="I am creating Lean and Agile Frontier AI, Lunara and Moonwave, and CAT pretraining.">
         <span class="hero-rotator__lead" aria-hidden="true">I am creating</span>
         <span class="hero-rotator__words" aria-hidden="true">
-          <span class="hero-rotator__word">Lean &amp; Agile Frontier AI</span>
+          <span class="hero-rotator__word is-active">Lean &amp; Agile Frontier AI</span>
           <span class="hero-rotator__word">Lunara &amp; Moonwave</span>
           <span class="hero-rotator__word">CAT pretraining</span>
         </span>
@@ -232,7 +261,6 @@
   </div>
 </div>
 </div>
-    </div>
   </section>
 
   <!-- ABOUT -->
@@ -254,9 +282,6 @@
               <p>
               Since my early days at Carnegie Mellon (almost a decade now!), my research has spanned active learning, pretraining language models, AI safety, Amazon's Alexa Taskbot, and now Moonworks' forest of models. 
               </p>
-
-            </p>
-
             <p>
                             <strong> I believe we must continue to create technology and art. <br> May human ingenuity reigh supreme!  </strong>
                             </p>
@@ -757,6 +782,146 @@
   <!-- Night sky starfield + twinkle + parallax (unchanged) -->
   <script>
   (function () {
+    const rotator = document.querySelector('.hero-rotator__words');
+    if (!rotator) return;
+
+    const words = Array.from(rotator.querySelectorAll('.hero-rotator__word'));
+    if (!words.length) return;
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const exitDuration = 420;
+    let current = Math.max(0, words.findIndex(function (word) {
+      return word.classList.contains('is-active');
+    }));
+    let timer = null;
+    let phaseTimer = null;
+
+    function settleWord(index) {
+      words.forEach(function (word, wordIndex) {
+        word.classList.toggle('is-active', wordIndex === index);
+        word.classList.remove('is-leaving');
+      });
+      current = index;
+    }
+
+    function showWord(index) {
+      const next = (index + words.length) % words.length;
+      const outgoing = words[current];
+      const incoming = words[next];
+
+      if (incoming === outgoing && incoming.classList.contains('is-active')) return;
+
+      if (phaseTimer !== null) {
+        clearTimeout(phaseTimer);
+        phaseTimer = null;
+      }
+
+      if (reducedMotion) {
+        settleWord(next);
+        return;
+      }
+
+      if (outgoing && outgoing !== incoming) {
+        outgoing.classList.remove('is-active');
+        outgoing.classList.add('is-leaving');
+      }
+
+      /* Finish the exit first; the next phrase then drops in from above. */
+      phaseTimer = window.setTimeout(function () {
+        words.forEach(function (word) {
+          word.classList.remove('is-active', 'is-leaving');
+        });
+        incoming.classList.add('is-active');
+        current = next;
+        phaseTimer = null;
+
+        if (outgoing && outgoing !== incoming) {
+          outgoing.classList.remove('is-leaving');
+        }
+      }, exitDuration);
+    }
+
+    function stopRotator() {
+      if (timer !== null) clearInterval(timer);
+      timer = null;
+    }
+
+    function startRotator() {
+      stopRotator();
+      if (words.length < 2 || document.hidden) return;
+
+      timer = setInterval(function () {
+        showWord((current + 1) % words.length);
+      }, 3600);
+    }
+
+    startRotator();
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) stopRotator();
+      else startRotator();
+    });
+  })();
+
+  (function () {
+    const artGrid = document.querySelector('#art .gallery-list');
+    const artworks = Array.from(document.querySelectorAll('#art .gallery-grid'));
+    const filterButtons = Array.from(document.querySelectorAll('#art .gallery-menu button[data-filter]'));
+    const mobileLayout = window.matchMedia('(max-width: 767.98px)');
+    let activeFilter = '*';
+
+    if (!artGrid || !artworks.length || !filterButtons.length) return;
+
+    function updateButtonState(filter) {
+      filterButtons.forEach(function (button) {
+        const isActive = button.dataset.filter === filter;
+        button.classList.toggle('active', isActive);
+        button.setAttribute('aria-pressed', String(isActive));
+      });
+    }
+
+    function applyFallbackFilter(filter) {
+      artworks.forEach(function (artwork) {
+        artwork.hidden = filter !== '*' && !artwork.matches(filter);
+      });
+    }
+
+    function applyArtFilter(filter) {
+      activeFilter = filter;
+      updateButtonState(filter);
+
+      const hasIsotope = window.jQuery && window.jQuery.fn && window.jQuery.fn.isotope;
+      if (hasIsotope && !mobileLayout.matches) {
+        artworks.forEach(function (artwork) { artwork.hidden = false; });
+        window.jQuery(artGrid).isotope({ filter: filter });
+        window.jQuery(artGrid).isotope('layout');
+      } else {
+        if (hasIsotope && window.jQuery(artGrid).data('isotope')) {
+          window.jQuery(artGrid).isotope('destroy');
+        }
+        applyFallbackFilter(filter);
+      }
+    }
+
+    filterButtons.forEach(function (button) {
+      button.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        applyArtFilter(button.dataset.filter);
+      }, true);
+    });
+
+    function refreshArtLayout() {
+      requestAnimationFrame(function () { applyArtFilter(activeFilter); });
+    }
+
+    if (document.readyState === 'complete') refreshArtLayout();
+    else addEventListener('load', refreshArtLayout, { once: true });
+
+    if (mobileLayout.addEventListener) mobileLayout.addEventListener('change', refreshArtLayout);
+    else mobileLayout.addListener(refreshArtLayout);
+  })();
+
+  (function () {
     const section = document.getElementById('home');
     const canvas  = document.getElementById('stars-canvas');
     const moon    = document.querySelector('.moon');
@@ -869,6 +1034,8 @@
     const gridElement = document.querySelector('.gallery-list2');
     const publications = Array.from(document.querySelectorAll('.gallery-list2 .gallery-grid2'));
     const filterButtons = Array.from(document.querySelectorAll('.gallery-menu2 button[data-filter]'));
+    const mobileLayout = window.matchMedia('(max-width: 767px)');
+    let activeFilter = DEFAULT_FILTER;
 
     if (!gridElement || !publications.length || !filterButtons.length) return;
 
@@ -887,15 +1054,19 @@
     }
 
     function applyPublicationFilter(filter) {
+      activeFilter = filter;
       updateButtonState(filter);
 
       const hasIsotope = window.jQuery && window.jQuery.fn && window.jQuery.fn.isotope;
-      if (hasIsotope) {
+      if (hasIsotope && !mobileLayout.matches) {
         publications.forEach(function (publication) { publication.hidden = false; });
         gridElement.classList.remove('publications-default');
         window.jQuery(gridElement).isotope({ filter: filter });
         window.jQuery(gridElement).isotope('layout');
       } else {
+        if (hasIsotope && window.jQuery(gridElement).data('isotope')) {
+          window.jQuery(gridElement).isotope('destroy');
+        }
         gridElement.classList.remove('publications-default');
         applyFallbackFilter(filter);
       }
@@ -915,6 +1086,13 @@
 
     if (document.readyState === 'complete') applyDefaultFilter();
     else addEventListener('load', applyDefaultFilter, { once: true });
+
+    function refreshPublicationLayout() {
+      requestAnimationFrame(function () { applyPublicationFilter(activeFilter); });
+    }
+
+    if (mobileLayout.addEventListener) mobileLayout.addEventListener('change', refreshPublicationLayout);
+    else mobileLayout.addListener(refreshPublicationLayout);
   })();
   </script>
 </body>
