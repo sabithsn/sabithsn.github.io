@@ -2847,8 +2847,63 @@ body.politics_version button:focus-visible {
   line-height: 1.5 !important;
 }
 
-.sky-hero .cd-words-wrapper {
-  color: var(--moon-cyan);
+.sky-hero .hero-rotator {
+  display: grid;
+  grid-template-columns: max-content 24ch;
+  column-gap: 0.7ch;
+  align-items: baseline;
+}
+
+.hero-rotator__lead {
+  color: var(--moon-soft);
+  -webkit-text-fill-color: var(--moon-soft);
+}
+
+.hero-rotator__words {
+  position: relative;
+  display: inline-grid;
+  width: 24ch;
+  height: 1.5em;
+  overflow: hidden;
+  text-align: left;
+  vertical-align: bottom;
+}
+
+.hero-rotator__word {
+  grid-area: 1 / 1;
+  width: 100%;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  background: linear-gradient(140deg, #fff 0%, #bfe6ff 20%, #83cfff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: translate3d(0, -115%, 0);
+  will-change: opacity, transform;
+  transition:
+    transform 520ms cubic-bezier(.22, 1, .36, 1),
+    opacity 240ms ease,
+    visibility 0s linear 520ms;
+}
+
+.hero-rotator__word.is-active {
+  z-index: 2;
+  opacity: 1;
+  visibility: visible;
+  transform: translate3d(0, 0, 0);
+  transition-delay: 0s;
+}
+
+.hero-rotator__word.is-leaving {
+  z-index: 1;
+  opacity: 0;
+  visibility: visible;
+  transform: translate3d(0, 115%, 0);
+  transition:
+    transform 420ms cubic-bezier(.55, .06, .68, .19),
+    opacity 220ms ease,
+    visibility 0s linear 420ms;
 }
 
 .sky-hero .role-link {
@@ -3426,6 +3481,11 @@ body.politics_version #contact .section-title p {
   margin-top: 6px;
 }
 
+#pubs .gallery-list2.publications-default > .gallery-grid2:not(.years-2023-2026),
+#pubs .gallery-grid2[hidden] {
+  display: none !important;
+}
+
 #pubs .gallery-grid2 {
   margin-top: 7px !important;
   margin-bottom: 7px !important;
@@ -3837,19 +3897,20 @@ body.politics_version #contact.section.db {
     margin-top: 16px;
   }
 
-  .sky-hero .cd-headline > span:first-child {
+  .sky-hero .hero-rotator {
     display: block;
-    padding-bottom: 0;
+    text-align: center;
   }
 
-  .sky-hero .cd-headline .cd-words-wrapper {
-    display: block;
+  .sky-hero .hero-rotator__words {
+    display: grid;
+    max-width: 100%;
     margin: 2px auto 0;
-    text-align: left;
+    text-align: center;
   }
 
   .sky-hero .moonworks-cta {
-    margin-top: 60px;
+    margin-top: 34px;
   }
 
   .sky-hero .oss-update {
@@ -3932,18 +3993,38 @@ body.politics_version #contact.section.db {
   }
 
   #art .gallery-list {
-    margin-left: -6px;
-    margin-right: -6px;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    width: 100%;
+    height: auto !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
   }
 
   #art .gallery-grid {
-    width: 50% !important;
-    padding: 6px;
+    position: relative !important;
+    inset: auto !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+    flex: none !important;
+    float: none !important;
+    max-width: 100% !important;
+    min-width: 0;
+    width: 100% !important;
+    padding: 0 !important;
   }
 
-  #art .gallery-single {
+  #art .gallery-grid[hidden] {
+    display: none !important;
+  }
+
+  #art .gallery-single,
+  #art .gallery-single:hover {
+    --art-tilt: 0deg;
     margin: 6px 0 16px;
     border-radius: 16px;
+    transform: none;
   }
 
   #art .gallery-grid .gallery-single > img,
@@ -3959,9 +4040,35 @@ body.politics_version #contact.section.db {
     line-height: 1.35;
   }
 
+  #pubs .gallery-list2 {
+    display: flex !important;
+    height: auto !important;
+    margin-right: 0;
+    margin-left: 0;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  #pubs .gallery-list2 > br {
+    display: none;
+  }
+
   #pubs .gallery-grid2 {
-    width: calc(100% - 12px) !important;
-    margin-left: 6px !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex: 0 0 auto !important;
+    transform: none !important;
+  }
+
+  #pubs .gallery-grid2 > a {
+    height: auto;
+    overflow-wrap: anywhere;
   }
 
   #travels .carousel {
@@ -4032,6 +4139,8 @@ body.politics_version #contact.section.db {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .lunara-frame { animation: none; }
+  .hero-rotator__word { filter: none; transform: none; transition: none; }
+  .hero-rotator__word.is-active { opacity: 1; visibility: visible; }
   .lunara-frame,
   .lunara-frame img,
   #art .gallery-single,
