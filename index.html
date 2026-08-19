@@ -38,7 +38,7 @@
 
   <!-- CSS (remove duplicate Bootstrap include) -->
   <link rel="stylesheet" href="css/bootstrap5.min.css">
-  <link rel="stylesheet" href="style.css?v=2.4">
+  <link rel="stylesheet" href="style.css?v=2.5">
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/custom.css">
   <!-- Vendor CSS from theme -->
@@ -215,6 +215,26 @@
         <img src="lunara/5.png" alt="" loading="eager" decoding="async" onerror="this.onerror=null;this.src='uploads/white-mountain-sabit-hassan.jpeg';">
       </figure>
     </div>
+    <script>
+      (function () {
+        const constellation = document.querySelector('.lunara-constellation');
+        if (!constellation) return;
+
+        const frames = Array.from(constellation.querySelectorAll('.lunara-frame'));
+        const images = Array.from(constellation.querySelectorAll('.lunara-frame > img'));
+        if (frames.length !== images.length || images.length < 2) return;
+
+        for (let index = images.length - 1; index > 0; index -= 1) {
+          const randomIndex = Math.floor(Math.random() * (index + 1));
+          [images[index], images[randomIndex]] = [images[randomIndex], images[index]];
+        }
+
+        images.forEach(function (image) { image.remove(); });
+        frames.forEach(function (frame, index) {
+          frame.insertBefore(images[index], frame.firstChild);
+        });
+      })();
+    </script>
     <div class="heading">
       <h1 class="gradient-text" style="font-size: 30px; margin-bottom: 0">Sabit Hassan (Pantho)</h1>
       <p class="gradient-text" style="font-size: 18px; padding-top: 0">
@@ -278,7 +298,7 @@
               </p>
 
               <p>
-              Since my early days at Carnegie Mellon (almost a decade now!), my research has spanned active learning, pretraining language models, AI safety, Amazon's Alexa Taskbot, and now Moonworks' forest of models. 
+              Since my early days at Carnegie Mellon, my research has spanned active learning, pretraining language models, AI safety, Amazon's Alexa Taskbot, and now Moonworks' forest of models. 
               </p>
             <p>
                             <strong> I believe we must continue to create technology and art. <br> May human ingenuity reigh supreme!  </strong>

@@ -3051,7 +3051,7 @@ body.politics_version button:focus-visible {
   translate: 0 0;
   transform: rotate(var(--frame-rotate));
   transition: z-index 0s, transform 360ms cubic-bezier(.2,.8,.2,1), box-shadow 360ms ease;
-  animation: lunaraFloat 7.3s cubic-bezier(.45, 0, .55, 1) infinite;
+  animation: lunaraFloat 5.8s cubic-bezier(.45, 0, .55, 1) infinite;
   will-change: translate, transform;
 }
 
@@ -3894,6 +3894,10 @@ body.politics_version #contact.section.db {
     height: 390px;
   }
 
+  .lunara-frame {
+    animation-duration: 7.3s;
+  }
+
   .sky-hero .moon {
     top: 78px;
     width: 82px;
@@ -3943,23 +3947,36 @@ body.politics_version #contact.section.db {
     padding: 74px 0;
   }
 
+  body.politics_version .section-title {
+    text-align: center;
+  }
+
+  body.politics_version .section-title h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   #about .container {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 106px;
-    column-gap: 18px;
+    grid-template-columns: minmax(0, 1fr);
     align-items: start;
   }
 
   #about .section-title {
     grid-column: 1;
-    grid-row: 1;
-    align-self: center;
-    margin-bottom: 28px;
+    grid-row: 2;
+    margin-bottom: 24px;
+    text-align: center;
   }
 
   #about .section-title h2 {
     margin-bottom: 0;
     font-size: clamp(35px, 10vw, 48px);
+  }
+
+  #about .section-title h2::after {
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   #about .row {
@@ -3968,7 +3985,7 @@ body.politics_version #contact.section.db {
 
   #about .row > .col-md-6 {
     grid-column: 1 / -1;
-    grid-row: 2;
+    grid-row: 3;
     width: 100%;
     padding: 0;
   }
@@ -3978,15 +3995,15 @@ body.politics_version #contact.section.db {
   }
 
   #about .row > .col-md-5 {
-    grid-column: 2;
+    grid-column: 1;
     grid-row: 1;
-    width: 106px;
+    width: 100%;
     padding: 0;
   }
 
   #about figure {
-    width: 96px;
-    margin: 0 0 0 auto;
+    width: clamp(150px, 42vw, 180px);
+    margin: 0 auto 24px;
   }
 
   #about figure::before {
@@ -3995,8 +4012,9 @@ body.politics_version #contact.section.db {
   }
 
   #about figure img {
-    width: 96px !important;
-    height: 96px !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.36);
   }
