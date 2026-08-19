@@ -2826,11 +2826,10 @@ body.politics_version button:focus-visible {
   max-width: 650px;
   margin: 0;
   padding: 0;
-  background: linear-gradient(125deg, #ffffff 12%, #cce5ff 50%, #8ac8ff 100%) !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
-  font-size: clamp(58px, 7.1vw, 108px) !important;
+  font-size: clamp(58px, 5.1vw, 108px) !important;
   font-weight: 700;
   line-height: 0.93 !important;
   letter-spacing: -0.075em;
