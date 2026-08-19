@@ -38,7 +38,7 @@
 
   <!-- CSS (remove duplicate Bootstrap include) -->
   <link rel="stylesheet" href="css/bootstrap5.min.css">
-  <link rel="stylesheet" href="style.css?v=1.3">
+  <link rel="stylesheet" href="style.css?v=2.1">
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/custom.css">
   <!-- Vendor CSS from theme -->
@@ -144,10 +144,13 @@
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" aria-label="Main Navigation">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu <i class="fa fa-bars" aria-hidden="true"></i>
+         <i class="fa fa-bars" aria-hidden="true"></i>
       </button>
+      <a href="#home" id="scroll-to-top2" class="navbar-brand" aria-label="Sabit Hassan Home">
+        <img src="images/crescent.png" class="nav-moon" alt="" aria-hidden="true">
+        <img src="images/Sabit.png" class="brand-signature" alt="Sabit Hassan logo">
+      </a>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <a href="#home" id="scroll-to-top2" class="navbar-brand" aria-label="Sabit Hassan Home"><img src="images/Sabit.png" class="img-fluid" alt="Sabit Hassan logo"></a>
         <ul class="navbar-nav text-uppercase ms-auto">
           <li class="nav-item"><a class="nav-link js-scroll-trigger active" href="#home">Home</a></li>
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
@@ -165,6 +168,24 @@
   <section id="home" class="main-banner sky-hero" aria-label="Hero">
     <canvas id="stars-canvas" aria-hidden="true"></canvas>
     <img src="images/crescent.png" alt="Decorative crescent moon" class="moon" loading="lazy" />
+    <div class="lunara-constellation" aria-hidden="true">
+      <figure class="lunara-frame lunara-frame--one">
+        <img src="lunara/1.jpg" alt="" loading="eager" decoding="async" onerror="this.onerror=null;this.src='uploads/aurora-night-sabit-hassan.jpg';">
+      </figure>
+      <figure class="lunara-frame lunara-frame--two">
+        <img src="lunara/2.png" alt="" loading="eager" decoding="async" onerror="this.onerror=null;this.src='uploads/ashitaka-and-san-sabit-hassan.jpg';">
+      </figure>
+      <figure class="lunara-frame lunara-frame--three">
+        <img src="lunara/3.png" alt="" loading="eager" decoding="async" onerror="this.onerror=null;this.src='uploads/blue-mountain-sabit-hassan.jpeg';">
+        <span class="lunara-wordmark">Lunara</span>
+      </figure>
+      <figure class="lunara-frame lunara-frame--four">
+        <img src="lunara/4.jpg" alt="" loading="eager" decoding="async" onerror="this.onerror=null;this.src='uploads/witch-and-warlock.jpg';">
+      </figure>
+      <figure class="lunara-frame lunara-frame--five">
+        <img src="lunara/5.png" alt="" loading="eager" decoding="async" onerror="this.onerror=null;this.src='uploads/white-mountain-sabit-hassan.jpeg';">
+      </figure>
+    </div>
     <div class="heading">
       <h1 class="gradient-text" style="font-size: 30px; margin-bottom: 0">Sabit Hassan (Pantho)</h1>
       <p class="gradient-text" style="font-size: 18px; padding-top: 0">
@@ -172,39 +193,42 @@
       </p>
       <h2 class="gradient-text" style="font-size: 40px;">Hello World</h2>
       <h3 class="cd-headline clip is-full-width gradient-text">
-        <span>I am developing</span>
+        <span>I am creating</span>
         <span class="cd-words-wrapper">
           <b class="is-visible">Lean & Agile Frontier AI</b>
-          <b>the TCX memory system</b>
-          <b>the CAT pretraining method</b>
+          <b>Lunara & Moonwave</b>
+          <b>CAT pretraining</b>
         </span>
       </h3>
       <div class="moonworks-cta">
         <a href="https://moonworks.ai" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Explore Moonworks AI</a>
       </div>
-      <div class="oss-update mt-3" role="note" aria-label="Open source release update">
+      <div class="oss-update" role="note" aria-label="Open source release update">
         <div class="oss-kicker">Moonworks Open Source Releases</div>
 
 <div class="oss-update-inner">
-
-    <span class="oss-title">Lunara Aesthetic I: Art Dataset </span>
-    <span class="oss-sep">—</span>
-    <a class="oss-link" href="https://huggingface.co/datasets/moonworks/lunara-aesthetic" target="_blank" rel="noopener">
-      Dataset
-    </a>
-    <span class="oss-dot" aria-hidden="true">|</span>
-    <a class="oss-link" href="https://arxiv.org/pdf/2601.07941" target="_blank" rel="noopener">
-      Paper
-    </a><br>
-    <span class="oss-title">Lunara Aesthetic II: Image Variation Dataset </span>
-    <span class="oss-sep">—</span>
-    <a class="oss-link" href="https://huggingface.co/datasets/moonworks/lunara-aesthetic-image-variations" target="_blank" rel="noopener">
-      Dataset
-    </a>
-    <span class="oss-dot" aria-hidden="true">|</span>
-    <a class="oss-link" href="https://arxiv.org/pdf/2602.01666" target="_blank" rel="noopener">
-      Paper
-    </a><br>
+    <div class="oss-release-row">
+      <span class="oss-title">Lunara Aesthetic I: Art Dataset </span>
+      <span class="oss-sep">—</span>
+      <a class="oss-link" href="https://huggingface.co/datasets/moonworks/lunara-aesthetic" target="_blank" rel="noopener">
+        Dataset
+      </a>
+      <span class="oss-dot" aria-hidden="true">|</span>
+      <a class="oss-link" href="https://arxiv.org/pdf/2601.07941" target="_blank" rel="noopener">
+        Paper
+      </a>
+    </div>
+    <div class="oss-release-row">
+      <span class="oss-title">Lunara Aesthetic II: Image Variation Dataset </span>
+      <span class="oss-sep">—</span>
+      <a class="oss-link" href="https://huggingface.co/datasets/moonworks/lunara-aesthetic-image-variations" target="_blank" rel="noopener">
+        Dataset
+      </a>
+      <span class="oss-dot" aria-hidden="true">|</span>
+      <a class="oss-link" href="https://arxiv.org/pdf/2602.01666" target="_blank" rel="noopener">
+        Paper
+      </a>
+    </div>
   </div>
 </div>
 </div>
@@ -221,17 +245,28 @@
         <div class="col-md-6">
           <div class="message-box" style="font-size: 16px;">
             <p>
-              Hello! I lead <a href="https://moonworks.ai" target="_blank" rel="noopener"><strong>Moonworks AI</strong></a>, where our mission is to develop
-              lean & agile frontier AI.
-              Our models are powered by our own <strong>CAT pretraining</strong>, helping models learn extremely fast and outpeform others in parameter class.
+              Hello! At <strong> <a href="https://moonworks.ai" target="_blank" rel="noopener">Moonworks</a> </strong>, I create algorithms and architecture that put our AI models at the frontier. I also put my art  into our models while at it... </p>
+              
+              <p>
+              Our open releases ranked among the giants on Hugging Face and our models (e.g., Lunara/ Moonwave) are outperforming much larger and much more expensive models: a testament to the hyper-efficiency of our algorithms and architecture.
+              </p>
+
+              <p>
+              Since my early days at Carnegie Mellon (almost a decade now!), my research has spanned active learning, pretraining language models, AI safety, Amazon's Alexa Taskbot, and now Moonworks' forest of models. 
+              </p>
+
             </p>
-            <p>I received my bachelor's degree in Computer Science from Carnegie Mellon University and my PhD from University of Pittsburgh. My research spans active learning for NLP, controlled generation, AI safety, and real‑world AI deployment.</p>
-            <p>I also go by <em>Pantho</em> — Bengali for "wanderer".</p>
+
             <p>
-              Learn more about our work at <a href="https://moonworks.ai" target="_blank" rel="noopener">Moonworks AI</a> or see selected
+                            <strong> I believe we must continue to create technology and art. <br> May human ingenuity reigh supreme!  </strong>
+                            </p>
+<!--             <p>
+              Check us out at <a href="https://moonworks.ai" target="_blank" rel="noopener">Moonworks AI</a> or see selected
               <a href="#pubs">publications</a> below.
-            </p>
-            <a href="uploads/CV-Sabit-Hassan.pdf" target="_blank" rel="noopener" class="sim-btn btn-hover-new" data-text="Download CV" id="cv"><span>Download CV</span></a>
+            </p> -->
+            <p>I also go by <em>Pantho</em>, Bengali for "wanderer".</p>
+
+            <a href="uploads/CV-Sabit-Hassan.pdf" target="_blank" rel="noopener" class="sim-btn btn-hover-new" data-text="Download CV" id="cv"><span>My CV</span></a>
           </div>
         </div>
         <div class ="col-md-1"> </div>
@@ -256,45 +291,42 @@
 <div class="gallery-menu2 row">
         <div class="col-md-12">
           <div class="button-group filter-button-group text-left">
-            <button class="active" data-filter="*">All</button>
-            <button data-filter=".2025">2025-2026</button>
-            <button data-filter=".2024">2024</button>
-            <button data-filter=".2023">2023</button>
-            <button data-filter=".2022">2022</button>
-            <button data-filter=".2021">2021</button>
+            <button data-filter="*">All</button>
+            <button class="active" data-filter=".years-2023-2026">2023-2026</button>
+            <button data-filter=".years-2020-2022">2020-2022</button>
             <button data-filter=".forever">Forever Ago</button>
           </div>
         </div>
       </div>
       <div class="gallery-list2 row">
         <br>
-          <div class="col-md-11 col-sm-8 gallery-grid2 2025" style="margin-left: 15px;"> <a href="https://arxiv.org/pdf/2602.01666" target="_blank">
+          <div class="col-md-11 col-sm-8 gallery-grid2 years-2023-2026 2025" style="margin-left: 15px;"> <a href="https://arxiv.org/pdf/2602.01666" target="_blank">
           &#9830; Wang, Y., Hassan, P., Sadeka, S., Soliman, N., Abdullah, M M S., <strong> Hassan, S.</strong><i> Moonworks Lunara Aesthetic II: An Image Variation Dataset. </i>  <strong>  2026.  </strong></a>
         </div>
 
-          <div class="col-md-11 col-sm-8 gallery-grid2 2025" style="margin-left: 15px;"> <a href="https://arxiv.org/pdf/2601.07941" target="_blank">
+          <div class="col-md-11 col-sm-8 gallery-grid2 years-2023-2026 2025" style="margin-left: 15px;"> <a href="https://arxiv.org/pdf/2601.07941" target="_blank">
           &#9830; Wang, Y.,  Abdullah, M M S., Hassan, P., <strong> Hassan, S.</strong><i> Moonworks Lunara Aesthetic Dataset. </i>  <strong>  2026.  </strong></a>
         </div>
 
-        <div class="col-md-11 col-sm-8 gallery-grid2 2025" style="margin-left: 15px;"> <a href="https://www.brookings.edu/articles/hype-and-harm-why-we-must-ask-harder-questions-about-ai-and-its-alignment-with-human-values/" target="_blank">
+        <div class="col-md-11 col-sm-8 gallery-grid2 years-2023-2026 2025" style="margin-left: 15px;"> <a href="https://www.brookings.edu/articles/hype-and-harm-why-we-must-ask-harder-questions-about-ai-and-its-alignment-with-human-values/" target="_blank">
           &#9830; Alikhani, M. & <strong> Hassan, S.</strong><i> Hype and harm: Why we must ask harder questions about AI and its alignment with human values.</i>  <strong>  BROOKINGS, 2025.  </strong></a>
         </div>
 
-        <div class="col-md-11 col-sm-8 gallery-grid2 2025" style="margin-left: 15px;"> <a href="https://dl.acm.org/doi/10.5555/3709347.3743614" target="_blank">
+        <div class="col-md-11 col-sm-8 gallery-grid2 years-2023-2026 2025" style="margin-left: 15px;"> <a href="https://dl.acm.org/doi/10.5555/3709347.3743614" target="_blank">
           &#9830; <strong> Hassan, S.</strong>, Chung, H, Tan, X., Alikhani, M. <i>Coherence-Driven Multimodal Safety Dialogue with Active Learning for Embodied Agents.</i>  <strong>  AAMAS, 2025.  </strong></a>
         </div>
 
-        <div class="col-md-11 col-sm-8 gallery-grid2 2025" style="margin-left: 15px;"> <a href="https://aclanthology.org/2025.coling-main.362/" target="_blank">
+        <div class="col-md-11 col-sm-8 gallery-grid2 years-2023-2026 2025" style="margin-left: 15px;"> <a href="https://aclanthology.org/2025.coling-main.362/" target="_blank">
           &#9830; <strong> Hassan, S.</strong>, Sicilia, A., Alikhani, M. <i>An Active Learning Framework for Inclusive Generation by Large Language Models.</i>  <strong>  COLING 2025.  </strong></a>
         </div>
 
-        <div class="col-md-11 col-sm-8 gallery-grid2 2025" style="margin-left: 15px;"> <a href="https://aclanthology.org/2025.coling-industry.32/">
+        <div class="col-md-11 col-sm-8 gallery-grid2 years-2023-2026 2025" style="margin-left: 15px;"> <a href="https://aclanthology.org/2025.coling-industry.32/">
           &#9830; Asano, Y., <strong> Hassan, S.</strong>, Sharma, P., Sicilia, A., Atwell, K., Litman, D., Alikhani, M. <i>Contextual ASR Error Handling with LLMs Augmentation for Goal-Oriented Conversational AI.</i>
           <strong> COLING 2025  </strong>
         </a>
         </div>
 
-        <div class="col-md-11 col-sm-8 gallery-grid2 2024" style="margin-left: 15px;">
+        <div class="col-md-11 col-sm-8 gallery-grid2 years-2023-2026 2024" style="margin-left: 15px;">
           <a href="https://aclanthology.org/2024.customnlp4u-1.10/" target="_blank">
             &#9830; <strong> Hassan, S.</strong>, Sicilia, A., Alikhani, M.
             <i>Active Learning for Robust and Representative LLM Generation in Safety-Critical Scenarios.</i>
@@ -302,7 +334,7 @@
           </a>
         </div>
 
-        <div class="col-md-11 col-sm-8 gallery-grid2 2023" style="margin-left: 15px;">
+        <div class="col-md-11 col-sm-8 gallery-grid2 years-2023-2026 2023" style="margin-left: 15px;">
           <a href="https://assets.amazon.science/73/d8/345784b5424bae73ac936c651221/isabel-tb2-final-2023.pdf" target="_blank">
             &#9830; Sicilia, A., Asano, Y., Atwell, K., Cheng, Q., Gupta, D., <strong> Hassan, S. </strong>
             Inan, M., Nwogu, J., Sharma, P., Alikhani, M. <i>ISABEL: An Inclusive and Collaborative
@@ -310,64 +342,64 @@
           </a>
         </div>
 
-        <div class="col-md-11 col-sm-8 gallery-grid2 2023" style="margin-left: 15px;"> <a href="https://arxiv.org/pdf/2311.18147.pdf" target="_blank">
+        <div class="col-md-11 col-sm-8 gallery-grid2 years-2023-2026 2023" style="margin-left: 15px;"> <a href="https://arxiv.org/pdf/2311.18147.pdf" target="_blank">
           &#9830; <strong> Hassan, S.</strong>, Alikhani, M. <i>DisCGen: A Framework for Discourse-Aware Counterspeech Generation.</i> <strong>IJCNLP-AACL, 2023.</strong> </a>
         </div>
 
-        <div class="col-md-11 col-sm-8 gallery-grid2 2023" style="margin-left: 15px;"> <a href="https://aclanthology.org/2023.findings-acl.342/" target="_blank">
+        <div class="col-md-11 col-sm-8 gallery-grid2 years-2023-2026 2023" style="margin-left: 15px;"> <a href="https://aclanthology.org/2023.findings-acl.342/" target="_blank">
           &#9830; <strong> Hassan, S.</strong>, Alikhani, M. <i>D-CALM: A Dynamic Clustering-based Active Learning Approach for Mitigating Bias.</i> <strong>ACL FINDINGS, 2023.</strong> </a>
         </div>
 
-        <div class="col-md-11 col-sm-8 gallery-grid2 2023" style="margin-left: 15px;"> <a href="https://aclanthology.org/2023.findings-acl.282/" target="_blank">
-          &#9830; Wang, Y., Donovan, H.A.S., <strong> Hassan, S.</strong>, Alikhani, M. <i>MedNgage: A Dataset for Understanding Engagement in Patient-Nurse Conversations.</i> <strong>ACL FINDINGS, 2023.</strong> </a> 
+        <div class="col-md-11 col-sm-8 gallery-grid2 years-2023-2026 2023" style="margin-left: 15px;"> <a href="https://aclanthology.org/2023.findings-acl.282/" target="_blank">
+          &#9830; Wang, Y., Donovan, H.A.S., <strong> Hassan, S.</strong>, Alikhani, M. <i>MedNgage: A Dataset for Understanding Engagement in Patient-Nurse Conversations.</i> <strong>ACL FINDINGS, 2023.</strong> </a>
         </div>
 
-        <div class="col-md-11 col-sm-8 gallery-grid2 2023" style="margin-left: 15px;"> <a href="https://aclanthology.org/2023.eacl-main.276/" target="_blank">
-          &#9830; Ye, M., Sikka, K., Atwell, K., <strong> Hassan, S.</strong>, Divakaran, A., Alikhani, M.  <i>Multilingual Content Moderation and Challenges: A Case Study of Reddit.</i> <strong>EACL, 2023.</strong> </a> 
+        <div class="col-md-11 col-sm-8 gallery-grid2 years-2023-2026 2023" style="margin-left: 15px;"> <a href="https://aclanthology.org/2023.eacl-main.276/" target="_blank">
+          &#9830; Ye, M., Sikka, K., Atwell, K., <strong> Hassan, S.</strong>, Divakaran, A., Alikhani, M.  <i>Multilingual Content Moderation and Challenges: A Case Study of Reddit.</i> <strong>EACL, 2023.</strong> </a>
         </div>
 
-        <div class="col-md-11 col-sm-11 gallery-grid2 2023" style="margin-left: 15px;"> 
-          <a href="https://www.cambridge.org/core/journals/natural-language-engineering/article/emojis-as-anchors-to-detect-arabic-offensive-language-and-hate-speech/2C1DFD708D4EE24B4E22C5664BD9B2E1" target="_blank"> &#9830; Mubarak, H., <strong> Hassan, S.</strong>, & Chowdhury, S. A. <i>Emojis as Anchors to Detect Arabic Offensive Language and Hate Speech.</i> <strong> NLE, 2023. </strong> </a> 
+        <div class="col-md-11 col-sm-11 gallery-grid2 years-2023-2026 2023" style="margin-left: 15px;">
+          <a href="https://www.cambridge.org/core/journals/natural-language-engineering/article/emojis-as-anchors-to-detect-arabic-offensive-language-and-hate-speech/2C1DFD708D4EE24B4E22C5664BD9B2E1" target="_blank"> &#9830; Mubarak, H., <strong> Hassan, S.</strong>, & Chowdhury, S. A. <i>Emojis as Anchors to Detect Arabic Offensive Language and Hate Speech.</i> <strong> NLE, 2023. </strong> </a>
         </div>
-        <div class="col-md-11 col-sm-8 gallery-grid2 2022" style="margin-left: 15px;"> <a href="https://aclanthology.org/2022.coling-1.530/" target="_blank">
+        <div class="col-md-11 col-sm-8 gallery-grid2 years-2020-2022 2022" style="margin-left: 15px;"> <a href="https://aclanthology.org/2022.coling-1.530/" target="_blank">
           &#9830; Atwell, K.*, <strong> Hassan, S.*</strong>, Alikhani, M. <i>APPDIA: A Discourse-aware Transformer-based Style Transfer Model for
-          Offensive Social Media Conversations</i> <strong>COLING, 2022.</strong> </a> 
+          Offensive Social Media Conversations</i> <strong>COLING, 2022.</strong> </a>
         </div>
-        <div class="col-md-11 col-sm-8 gallery-grid2 2022" style="margin-left: 15px;"> 
-          <a href="https://aclanthology.org/2022.findings-acl.228/" target="_blank"> &#9830; Inan, M.*, Zhong, Y.*, <strong> Hassan, S.*</strong>, Quandt, L., Alikhani, M. <i>Modeling Intensification for Signed Language Generation: A Computational Approach.</i> <strong>ACL FINDINGS, 2022.</strong> </a> 
+        <div class="col-md-11 col-sm-8 gallery-grid2 years-2020-2022 2022" style="margin-left: 15px;">
+          <a href="https://aclanthology.org/2022.findings-acl.228/" target="_blank"> &#9830; Inan, M.*, Zhong, Y.*, <strong> Hassan, S.*</strong>, Quandt, L., Alikhani, M. <i>Modeling Intensification for Signed Language Generation: A Computational Approach.</i> <strong>ACL FINDINGS, 2022.</strong> </a>
         </div>
-        <div class="col-md-11 col-sm-11 gallery-grid2 2022" style="margin-left: 15px;"> 
-          <a href="https://aclanthology.org/2022.lrec-1.751/" target="_blank"> &#9830; <strong> Hassan, S.</strong>, Shaar, S., & Darwish, K. <i>Cross-lingual Emotion Detection.</i> <strong>  LREC, 2022.  </strong> </a> 
+        <div class="col-md-11 col-sm-11 gallery-grid2 years-2020-2022 2022" style="margin-left: 15px;">
+          <a href="https://aclanthology.org/2022.lrec-1.751/" target="_blank"> &#9830; <strong> Hassan, S.</strong>, Shaar, S., & Darwish, K. <i>Cross-lingual Emotion Detection.</i> <strong>  LREC, 2022.  </strong> </a>
         </div>
-        <div class="col-md-11 col-sm-11 gallery-grid2 2022" style="margin-left: 15px;"> 
+        <div class="col-md-11 col-sm-11 gallery-grid2 years-2020-2022 2022" style="margin-left: 15px;">
           <a href="https://aclanthology.org/2022.lrec-1.344/" target="_blank"> &#9830; Mubarak, H., <strong> Hassan, S.</strong>, Chowdhury, S. A., & Alam, F.  <i>Analyzing Arabic Tweets About COVID-19 Vaccination.</i> <strong>  LREC, 2022.  </strong>
-          </a> 
+          </a>
         </div>
-        <div class="col-md-11 col-sm-8 gallery-grid2 2021" style="margin-left: 15px;"> 
-          <a href="https://aclanthology.org/2021.eacl-demos.14/" target="_blank"> &#9830; <strong> Hassan, S.</strong>, Mubarak, H., Abdelali, A., & Darwish, K. <i>ASAD: Arabic Social Media Analytics and unDerstanding.</i> <strong> EACL, 2021.  </strong> </a> 
-        </div>
-        
-        <div class="col-md-11 col-sm-11 gallery-grid2 2021" style="margin-left: 15px;"> 
-          <a href="https://aclanthology.org/2021.wanlp-1.14/" target="_blank"> &#9830; Mubarak, H., <strong> Hassan, S.</strong>, & Abdealali, A. <i>Adult Content Detection on Arabic Twitter: Analysis and Experiments.</i> <strong>  WANLP, 2021.  </strong> </a> 
+        <div class="col-md-11 col-sm-8 gallery-grid2 years-2020-2022 2021" style="margin-left: 15px;">
+          <a href="https://aclanthology.org/2021.eacl-demos.14/" target="_blank"> &#9830; <strong> Hassan, S.</strong>, Mubarak, H., Abdelali, A., & Darwish, K. <i>ASAD: Arabic Social Media Analytics and unDerstanding.</i> <strong> EACL, 2021.  </strong> </a>
         </div>
 
-        <div class="col-md-11 col-sm-11 gallery-grid2 2021" style="margin-left: 15px;"> 
-          <a href="https://arxiv.org/abs/2005.06557" target="_blank"> &#9830; Abdelali, A., Mubarak, H., Samih, Y., <strong> Hassan, S.</strong>, & Darwish, K. <i>QADI: Arabic Dialect Identification in the Wild.</i>  <br> <strong>  WANLP, 2021.  </strong> </a> 
+        <div class="col-md-11 col-sm-11 gallery-grid2 years-2020-2022 2021" style="margin-left: 15px;">
+          <a href="https://aclanthology.org/2021.wanlp-1.14/" target="_blank"> &#9830; Mubarak, H., <strong> Hassan, S.</strong>, & Abdealali, A. <i>Adult Content Detection on Arabic Twitter: Analysis and Experiments.</i> <strong>  WANLP, 2021.  </strong> </a>
         </div>
 
-        <div class="col-md-11 col-sm-11 gallery-grid2 2021" style="margin-left: 15px;"> 
-          <a href="https://aclanthology.org/2021.louhi-1.1/" target="_blank"> &#9830; Mubarak, H., & <strong> Hassan, S.</strong> <i>Analyzing Arabic Tweets in the Early Days of Coronavirus (COVID-19) Pandemic.</i> <br> <strong>  LOUHI, 2021.  </strong> </a> 
+        <div class="col-md-11 col-sm-11 gallery-grid2 years-2020-2022 2021" style="margin-left: 15px;">
+          <a href="https://arxiv.org/abs/2005.06557" target="_blank"> &#9830; Abdelali, A., Mubarak, H., Samih, Y., <strong> Hassan, S.</strong>, & Darwish, K. <i>QADI: Arabic Dialect Identification in the Wild.</i>  <br> <strong>  WANLP, 2021.  </strong> </a>
         </div>
 
-        <div class="col-md-11 col-sm-11 gallery-grid2 forever" style="margin-left: 15px;"> 
-          <a href="https://link.springer.com/chapter/10.1007/978-3-030-60975-7_18" target="_blank"> &#9830; Mubarak, H., Abdelali, A., <strong> Hassan, S.</strong>, & Darwish, K. <i>Spam Detection on Arabic Twitter.</i> <strong>  SocInfo, 2020.  </strong> </a> 
+        <div class="col-md-11 col-sm-11 gallery-grid2 years-2020-2022 2021" style="margin-left: 15px;">
+          <a href="https://aclanthology.org/2021.louhi-1.1/" target="_blank"> &#9830; Mubarak, H., & <strong> Hassan, S.</strong> <i>Analyzing Arabic Tweets in the Early Days of Coronavirus (COVID-19) Pandemic.</i> <br> <strong>  LOUHI, 2021.  </strong> </a>
         </div>
 
-        <div class="col-md-11 col-sm-11 gallery-grid2 forever" style="margin-left: 15px;"> 
-          <a href="https://www.aclweb.org/anthology/2020.semeval-1.249/" target="_blank"> &#9830; <strong> Hassan, S.</strong>, Samih, Y., Mubarak, H., & Abdelali, A. <i>ALT at SemEval-2020 task 12: Arabic and English offensive language identification in social media.</i> <strong>  SemEval, 2020.  </strong> </a> 
+        <div class="col-md-11 col-sm-11 gallery-grid2 years-2020-2022 2020" style="margin-left: 15px;">
+          <a href="https://link.springer.com/chapter/10.1007/978-3-030-60975-7_18" target="_blank"> &#9830; Mubarak, H., Abdelali, A., <strong> Hassan, S.</strong>, & Darwish, K. <i>Spam Detection on Arabic Twitter.</i> <strong>  SocInfo, 2020.  </strong> </a>
         </div>
 
-        <div class="col-md-11 col-sm-8 gallery-grid2 forever" style="margin-left: 15px;">
+        <div class="col-md-11 col-sm-11 gallery-grid2 years-2020-2022 2020" style="margin-left: 15px;">
+          <a href="https://www.aclweb.org/anthology/2020.semeval-1.249/" target="_blank"> &#9830; <strong> Hassan, S.</strong>, Samih, Y., Mubarak, H., & Abdelali, A. <i>ALT at SemEval-2020 task 12: Arabic and English offensive language identification in social media.</i> <strong>  SemEval, 2020.  </strong> </a>
+        </div>
+
+        <div class="col-md-11 col-sm-8 gallery-grid2 years-2020-2022 2020" style="margin-left: 15px;">
           <a href="https://www.aclweb.org/anthology/2020.osact-1.9/" target="_blank">
             &#9830; <strong> Hassan, S.</strong>, Samih, Y., Mubarak, H., Abdelali, A., Rashed, A., & Chowdhury, S. A.
             <i>ALT at OSACT shared task on offensive language detection.</i>
@@ -375,8 +407,8 @@
           </a>
         </div>
 
-        <div class="col-md-11 col-sm-11 gallery-grid2 forever" style="margin-left: 15px;"> 
-          <a href="https://www.aclweb.org/anthology/2020.bucc-1.3/" target="_blank"> &#9830; Mubarak, H., <strong> Hassan, S.</strong>, & Abdelali, A. <i>Constructing a bilingual corpus of parallel tweets.</i> <strong>  BUCC, 2020.  </strong> </a> 
+        <div class="col-md-11 col-sm-11 gallery-grid2 years-2020-2022 2020" style="margin-left: 15px;">
+          <a href="https://www.aclweb.org/anthology/2020.bucc-1.3/" target="_blank"> &#9830; Mubarak, H., <strong> Hassan, S.</strong>, & Abdelali, A. <i>Constructing a bilingual corpus of parallel tweets.</i> <strong>  BUCC, 2020.  </strong> </a>
         </div>
 
         <div class="col-md-11 col-sm-11 gallery-grid2 forever" style="margin-left: 15px;">
@@ -387,20 +419,20 @@
           </a>
         </div>
 
-        <div class="col-md-11 col-sm-11 gallery-grid2 forever" style="margin-left: 15px;"> 
-          <a href="https://link.springer.com/chapter/10.1007/978-3-030-13435-8_4" target="_blank"> &#9830; Anabtawi, M., <strong> Hassan, S.</strong>, Kapoutsis, C., & Zakzok, M. <i>An Oracle Hierarchy for Small One-way Finite Automata.</i> <strong>  LATA, 2018.  </strong> </a> 
+        <div class="col-md-11 col-sm-11 gallery-grid2 forever" style="margin-left: 15px;">
+          <a href="https://link.springer.com/chapter/10.1007/978-3-030-13435-8_4" target="_blank"> &#9830; Anabtawi, M., <strong> Hassan, S.</strong>, Kapoutsis, C., & Zakzok, M. <i>An Oracle Hierarchy for Small One-way Finite Automata.</i> <strong>  LATA, 2018.  </strong> </a>
         </div>
-        <div class="col-md-11 col-sm-11 gallery-grid2 forever" style="margin-left: 15px;"> 
-          <a href="https://ieeexplore.ieee.org/document/8614058" target="_blank"> &#9830; <strong> Hassan, S.</strong>, Shaar, S., Raj, B., & Razak, S. <i>Interactive Evaluation of Classifiers Under Limited Resources.</i> <br> <strong>  IEEE ICMLA, 2018.  </strong> </a> 
+        <div class="col-md-11 col-sm-11 gallery-grid2 forever" style="margin-left: 15px;">
+          <a href="https://ieeexplore.ieee.org/document/8614058" target="_blank"> &#9830; <strong> Hassan, S.</strong>, Shaar, S., Raj, B., & Razak, S. <i>Interactive Evaluation of Classifiers Under Limited Resources.</i> <br> <strong>  IEEE ICMLA, 2018.  </strong> </a>
         </div>
-        <div class="col-md-11 col-sm-11 gallery-grid2 2021" style="margin-left: 15px;"> 
-          <a href="https://arxiv.org/abs/2102.10684" target="_blank"> &#9830; Abdelali, A., <strong> Hassan, S.</strong>, Mubarak, H., Darwish, K., & Samih, Y. <i>Pre-Training BERT on Arabic Tweets: Practical Considerations.</i> <strong> arXiv preprint arxiv:2102.10684, 2021. </strong> </a> 
+        <div class="col-md-11 col-sm-11 gallery-grid2 years-2020-2022 2021" style="margin-left: 15px;">
+          <a href="https://arxiv.org/abs/2102.10684" target="_blank"> &#9830; Abdelali, A., <strong> Hassan, S.</strong>, Mubarak, H., Darwish, K., & Samih, Y. <i>Pre-Training BERT on Arabic Tweets: Practical Considerations.</i> <strong> arXiv preprint arxiv:2102.10684, 2021. </strong> </a>
         </div>
-        <div class="col-md-11 col-sm-11 gallery-grid2 2022" style="margin-left: 15px;"> 
-          <a href="https://escholarship.org/uc/item/34k4m5qg" target="_blank"> &#9830; <strong> Hassan, S.*,</strong>  Atwell, KJ.*, Alikhani, M. <i>Studying the Effect of Moderator Biases on the Diversity of Online Discussions: A Computational Cross-linguistic Study.</i> <strong>  (CogSci 2022)  </strong> </a> 
+        <div class="col-md-11 col-sm-11 gallery-grid2 years-2020-2022 2022" style="margin-left: 15px;">
+          <a href="https://escholarship.org/uc/item/34k4m5qg" target="_blank"> &#9830; <strong> Hassan, S.*,</strong>  Atwell, KJ.*, Alikhani, M. <i>Studying the Effect of Moderator Biases on the Diversity of Online Discussions: A Computational Cross-linguistic Study.</i> <strong>  (CogSci 2022)  </strong> </a>
         </div>
-        <div class="col-md-11 col-sm-11 gallery-grid2 2022" style="margin-left: 15px;"> 
-          <a href="https://escholarship.org/uc/item/4f16m2vv" target="_blank"> &#9830; Inan, M.*, Zhong, Y.*, <strong> Hassan, S.*</strong>, Quandt, L., Alikhani, M. <i>Learning cognitive and linguistic prosodic categories for automatic cross-lingual sign language understanding.</i> <strong>  (CogSci 2022)  </strong> </a> 
+        <div class="col-md-11 col-sm-11 gallery-grid2 years-2020-2022 2022" style="margin-left: 15px;">
+          <a href="https://escholarship.org/uc/item/4f16m2vv" target="_blank"> &#9830; Inan, M.*, Zhong, Y.*, <strong> Hassan, S.*</strong>, Quandt, L., Alikhani, M. <i>Learning cognitive and linguistic prosodic categories for automatic cross-lingual sign language understanding.</i> <strong>  (CogSci 2022)  </strong> </a>
         </div>
       </div>
     </div>
@@ -469,7 +501,7 @@
             <div class="text-center"> Wandering Samurai </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6 gallery-grid sketch">
+<!--         <div class="col-md-4 col-sm-6 gallery-grid sketch">
           <div class="gallery-single fix">
             <img src="uploads/wolf-1.jpg" class="img-fluid" alt="sketch of wolf by sabit hassan">
             <div class="img-overlay">
@@ -477,7 +509,7 @@
             </div>
             <div class="text-center"> Howl </div>
           </div>
-        </div>
+        </div> -->
         <div class="col-md-4 col-sm-6 gallery-grid sketch">
           <div class="gallery-single fix">
             <img src="uploads/goldfish.jpg" class="img-fluid" alt="trapped by sabit hassan">
@@ -745,8 +777,8 @@
     const STAR_SIZE_MIN     = 0.45;
     const STAR_SIZE_MAX     = 1.0;
     const LAYERS            = 3;
-    const TWINKLE_SPEED     = 0.0016;
-    const TWINKLE_AMPLITUDE = 0.12;
+    const TWINKLE_SPEED     = 0.00225;
+    const TWINKLE_AMPLITUDE = 0.23;
     const PARALLAX_SCROLL_Y = 0.28;
     const PARALLAX_MOUSE_X  = 5.0;
     const PARALLAX_MOUSE_Y  = 2.0;
@@ -777,7 +809,7 @@
       stars = Array.from({ length: count }, () => {
         const layer = Math.floor(Math.random() * LAYERS);
         const size  = rand(STAR_SIZE_MIN, STAR_SIZE_MAX) * (1 + layer * 0.25);
-        return { x: Math.random() * w, y: Math.random() * h, r: size, layer, baseAlpha: rand(0.65, 0.98), phase: Math.random() * Math.PI * 2 };
+        return { x: Math.random() * w, y: Math.random() * h, r: size, layer, baseAlpha: rand(0.56, 0.96), phase: Math.random() * Math.PI * 2, twinkle: rand(0.72, 1.48) };
       });
     }
 
@@ -809,7 +841,7 @@
         const yScroll = -scrollY * PARALLAX_SCROLL_Y * depth;
         const xMouse  = nx * (PARALLAX_MOUSE_X * depth);
         const yMouse  = ny * (PARALLAX_MOUSE_Y * depth);
-        const alpha = Math.max(0, Math.min(1, s.baseAlpha + Math.sin(s.phase + ts * TWINKLE_SPEED * (1 + depth)) * TWINKLE_AMPLITUDE));
+        const alpha = Math.max(0, Math.min(1, s.baseAlpha + Math.sin(s.phase + ts * TWINKLE_SPEED * (1 + depth) * s.twinkle) * TWINKLE_AMPLITUDE));
         ctx.globalAlpha = alpha;
         ctx.fillStyle = '#fff';
         const px = s.x + xMouse;
@@ -831,6 +863,13 @@
     addEventListener('scroll', updateScroll, { passive: true });
     if (!REDUCED_MOTION) addEventListener('mousemove', onMouseMove, { passive: true });
   })();
+
+  addEventListener('load', function () {
+    setTimeout(function () {
+      const recentPublications = document.querySelector('.gallery-menu2 button[data-filter=".years-2023-2026"]');
+      if (recentPublications && window.jQuery) window.jQuery(recentPublications).trigger('click');
+    }, 0);
+  });
   </script>
 </body>
 </html>
